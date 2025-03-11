@@ -16,8 +16,7 @@ class TypeList():
     
     def __check_for_type__(self, item):
         if not isinstance(item, self.t):
-            print(f"Error: All items of list dont match specifed type '{self.t}'.")
-            quit(90001)
+            raise Exception(f"Error: All items of list dont match specifed type '{self.t}'.")
 
     def append(self, item):
         """

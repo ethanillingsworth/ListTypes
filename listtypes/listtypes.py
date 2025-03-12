@@ -9,10 +9,11 @@ class TypeList():
     """
     def __init__(self, t: type, l: list = []):
         self.t = t
+        self.list = l
+
+
         for item in l:
             self.__check_for_type__(item)
-        
-        self.list = l
     
     def __check_for_type__(self, item):
         if not isinstance(item, self.t):
@@ -97,21 +98,21 @@ class TypeList():
         return len(self.list)
 
 class StringList(TypeList):
-    def __init__(self, l: list):
+    def __init__(self, l: list = []):
         super().__init__(str, l)
 
 class IntList(TypeList):
-    def __init__(self, l: list):
+    def __init__(self, l: list = []):
         super().__init__(int, l)
 
 class FloatList(TypeList):
-    def __init__(self, l: list):
+    def __init__(self, l: list = []):
         super().__init__(float, l)
 
 class BoolList(TypeList):
-    def __init__(self, l: list):
+    def __init__(self, l: list = []):
         super().__init__(bool, l)
 
 class DictList(TypeList):
-    def __init__(self, l: list):
+    def __init__(self, l: list = []):
         super().__init__(dict, l)
